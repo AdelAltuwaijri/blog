@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}}">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+ 
+   
+    <div class="border p-3 mb-2 mb-5">
+        <legend class="border-bottom pb-1 mb-3">تسجيل الدخول</legend>
+        <form method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+    
+            <input class="btn btn-secondary mt-2  mt-4" type="submit" value="تسجيل دخول" >
+        </form>
+   
+   <div class="border-top mt-4 pt-2"> 
+       <small> اذا لم يكن لديك حساب فيمكنك <a href="#"> التسجيل من هنا</a></small>
+    </div>
+</div>
+{% endblock content %}

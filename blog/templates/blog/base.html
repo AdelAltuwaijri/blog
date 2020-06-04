@@ -1,0 +1,172 @@
+{% load static %}
+{% load post_tag %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if title %}
+    <title>  مدونة | {{title}}</title>
+    {% else %}
+    <title>مدونة </title>
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'blog/CSS/Bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/CSS/main.css' %}">
+    <link rel="shortcut" href="{% static 'blog-sodlid.svg' %}">
+</head>
+<body>
+   <header>
+       <!-- start Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+
+            <img src="{% static 'blog/images/notepad.png' %}" alt="شعار مدونة" width="35 px">
+            مدونة
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}">الرئيسية <span class="sr-only">(current)</span></a>
+            </li>
+         
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                دوراتي
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">دورة بايثون</a>
+                <a class="dropdown-item" href="#">دورة دجانقو</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">دورة تعلم الآلة</a>
+              </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">عني</a>
+              </li>
+          </ul>
+
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}" >الملف الشخصي</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'new_post' %}">تدوينة جديدة</a>  </li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}" >تسجيل خروج</a> </li>
+                
+        </ul>
+          {% else %}
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}" >تسجيل دخول</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'registration' %}">تسجيل</a>  </li>    
+        </ul>
+
+          {% endif %}
+          
+        </div>
+      </nav>
+      <!-- End Navbar-->
+   </header>
+        <section>
+          <div class="container">
+            <div class="row mt-4"> <!-- mt : margin top-->
+                <div class="col-md-8">
+                 {% block content%}
+                      
+                 {% endblock content %}
+                </div> 
+                <div class="col-md-4"> <!-- md : margin down-->
+                  <div class="card mb-3"> <!-- mb : margin bottom-->
+                    <h3 class="text-center bg-secondary text-light p-2" > اخر التدوينات </h3>
+                      {% latest_posts %}
+                  </div>
+                  <div class="card mb-3"> <!-- mb : margin bottom-->
+                    <h3 class="text-center bg-secondary text-light p-2" > اخر التعليقات </h3> 
+                     
+                    {% latest_comments %}
+                    
+                    <div class="card-footer">
+                        {% if inactive_comments == 0 %}
+                       <small> لايوجد تعليقات غير مفعلة </small> 
+                        {% else %}
+                       <small>  ( {% inactive_comments %}  ) تعليقات غير مفعلة </small>
+                        {% endif %}                        
+                      </div>
+                  </div>
+
+                 
+
+                </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="bg-light mt-3">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md">
+                <div class="card-group mt-3">
+                  <div class="card m-3">
+                    <h3 class="card-title text-center 
+                    border-bottom p-2 m-3"> عنّي </h3>
+                    <div class="card-body">
+                      <div class="text-center">
+                        
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<div class="LI-profile-badge" data-version="v1" data-size="small" data-locale="en_US" data-type="vertical"
+  data-theme="light" data-vanity="adelaltuwaijri"><a class="LI-simple-link"
+    href='https://sa.linkedin.com/in/adelaltuwaijri?trk=profile-badge'>سيرتي الذاتية</a></div>
+</div>
+</div>
+                      </div>
+                  
+
+                  
+
+                  <div class="card m-3">
+                    <h3 class="card-title text-center 
+                    border-bottom p-2 m-3"> مواقع هامة </h3>
+                    <div class="card-body">
+                      <ul>
+                        <li> <a href="https://www.datacamp.com/"> Learn Data Science Online </a></li>
+                        <li> <a href="https://www.w3schools.com/">THE WORLD'S LARGEST WEB DEVELOPER SITE</a></li>
+                        <li> <a href="https://www.kaggle.com/">Kaggle</a></li>
+                        <li> <a href="https://towardsdatascience.com/">Towards data science</a></li>
+                        <li> <a href="https://datatofish.com/">Data to Fish</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="card m-3">
+                    <h3 class="card-title text-center 
+                    border-bottom p-2 m-3"> وسائل التواصل الاجتماعي </h3>
+                    <h4 class="card-body text-center">
+                      <a href="" class="text-secondary"><i class="fab fa-facebook"></i></a>
+                      <a href="" class="text-secondary"><i class="fab fa-twitter"></i></a>
+                      <a href="" class="text-secondary"><i class="fab fa-instgram"></i></a>
+                      <a href="" class="text-secondary"><i class="fab fa-youtube"></i></a>
+                      <a href="" class="text-secondary"><i class="fab fa-telegram"></i></a>
+                      <a href="" class="text-secondary"><i class="fab fa-linkedin"></i></a>
+                    </h4>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="row p-2"> <!-- p: padding-->
+              <div class="col-md text-center">
+                <small class="text-light">&copy; جميع الحقوق محفوظة</small>
+              </div> 
+            </div>
+          </div>      
+        </footer>
+    <script src="{% static 'blog/js/jquery-3.5.1.slim.min.js' %}"></script>
+    <script src="{% static 'blog/js/popper.min.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'blog/js/fontawesom-all.min.js' %}"></script>
+     
+</body>
+</html>
