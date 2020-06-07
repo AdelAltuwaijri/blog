@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'blog',
         'USER': 'root',
         'PASSWORD' : 'adel4150485' ,
-        'HOST' : '',
+        'HOST' : 'mysql.server',
         'PORT' : '',
     }
 }
