@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
       #  'PASSWORD' : 'adel4150485' ,
        # 'HOST' : 'b102ae7a56628a:3df66aab@us-cdbr-east-05.cleardb.net/heroku_b75f2a73178ca16?reconnect=true/',
         #'PORT' : '',
-    }
+   # }
  
 DATABASES = { 
     'default' : {
