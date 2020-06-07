@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-DATABASES = {
-    db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(db_from_env)
+#DATABASES = {
+ #   db_from_env = dj_database_url.config(conn_max_age=500)
+  #  DATABASES['default'].update(db_from_env)
   # 'default': {
    #     'ENGINE': 'django.db.backends.mysql',
     #    'NAME': 'blog',
@@ -98,7 +98,7 @@ DATABASES = {
         #'PORT' : '',
     }
  
-
+DATABASES = { 'default' : dj_database_url.config()}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
