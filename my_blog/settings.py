@@ -99,10 +99,10 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
    # }
  
 DATABASES = { 
-    'default' : {
+    'default' : 
         
         dj_database_url.config()
-    }
+   
     }
 
 # Password validation
