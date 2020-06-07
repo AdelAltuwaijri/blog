@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 DATABASES = { 
     'default' : 
         
-        dj_database_url.config()
+        dj_database_url.config(default='sqlite:////path-to-my/database.sqlite')
    
     }
 
