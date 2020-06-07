@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&=o)(d*#lf_9wdg6f-1+7)ybr61x4^2ztnr--klhb)w4+mp(yt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 #ALLOWED_HOSTS = ['adelaltuwaijri-blog.herokuapp.com','127.0.0.1:8000']
