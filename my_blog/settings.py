@@ -24,19 +24,22 @@ SECRET_KEY = '&=o)(d*#lf_9wdg6f-1+7)ybr61x4^2ztnr--klhb)w4+mp(yt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+#COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
+#ALLOWED_HOSTS = ['adelaltuwaijri-blog.herokuapp.com','127.0.0.1:8000']
 ALLOWED_HOSTS = ['adelaltuwaijri-blog.herokuapp.com','127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'blog',
     'user',
     'crispy_forms',
@@ -44,8 +47,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,15 +80,8 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-"""
-DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
- }
- 
-"""
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -93,7 +89,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD' : 'adel4150485' ,
         'HOST' : '127.0.0.1',
-        'PORT' : '3306',
+        'PORT' : '',
     }
 }
 
