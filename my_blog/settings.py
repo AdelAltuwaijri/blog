@@ -98,7 +98,12 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
         #'PORT' : '',
     }
  
-DATABASES = { 'default' : dj_database_url.config()}
+DATABASES = { 
+    'default' : {
+        
+        dj_database_url.config()
+    }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
