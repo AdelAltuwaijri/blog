@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import django_heroku
 import os
 import sys
-#import urlparse
+import dj_database_url 
 
 
 
@@ -87,15 +87,17 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 
 
 DATABASES = {
-   'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',
-        'USER': 'root',
-        'PASSWORD' : 'adel4150485' ,
-        'HOST' : 'b102ae7a56628a:3df66aab@us-cdbr-east-05.cleardb.net/heroku_b75f2a73178ca16?reconnect=true/',
-        'PORT' : '',
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
+  # 'default': {
+   #     'ENGINE': 'django.db.backends.mysql',
+    #    'NAME': 'blog',
+     #   'USER': 'root',
+      #  'PASSWORD' : 'adel4150485' ,
+       # 'HOST' : 'b102ae7a56628a:3df66aab@us-cdbr-east-05.cleardb.net/heroku_b75f2a73178ca16?reconnect=true/',
+        #'PORT' : '',
     }
- }
+ 
 
 
 # Password validation
