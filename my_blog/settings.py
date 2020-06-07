@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'blog',
         'USER': 'root',
         'PASSWORD' : 'adel4150485' ,
-        'HOST' : 'mysql.server',
+        'HOST' : 'https://adelaltuwaijri-blog.herokuapp.com/',
         'PORT' : '',
     }
 }
