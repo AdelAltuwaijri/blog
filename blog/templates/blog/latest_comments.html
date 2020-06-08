@@ -4,12 +4,12 @@
     <li class="list-group-item latest-comment-item" ></li>
       <a href="{% url 'detail' comment.post.id %}" class="text-dark"> 
         {% if comment.body|length > 40 %}
-          {{comment.body|slice:'40'}} ..
+          {{comment.body|safe|slice:40}} ..
         {% else %}        
-          {{comment.body}} 
+          {{comment.body|safe}} 
         {% endif %}
       </a>
-    </li>
+    
     {% empty %}
     <li class="list-group-item latest-comment-item" >لايوجد تعليقات </li>
      {% endfor %}

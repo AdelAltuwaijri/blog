@@ -2,9 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
+from tinymce import models as tinymce_models
+from ckeditor.fields import RichTextField
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    #content = models.TextField()
+    #content = tinymce_models.HTMLField()
+    content = RichTextField()
     post_date = models.DateTimeField(default=timezone.now)
     post_update = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User,on_delete=models.CASCADE)

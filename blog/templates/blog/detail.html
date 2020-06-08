@@ -14,7 +14,7 @@
 </div>
        {% endif %}
         <h3> <a class="text-dark p-3" href="#" > {{post.title}} </a> </h3>
-       <p class=" p-3">{{post.content}}</p>
+       <p class=" p-3">{{post.content|safe}}</p>
     </div>
    
     <h2 class="border-bottom mt-5 mb-3">التعليقات ({{comments.count}})</h2>

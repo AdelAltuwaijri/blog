@@ -11,7 +11,14 @@
         <img class="img-fluid rounded-circle border m-2" src="{{post.author.profile.image.url}}" width="70px" alt="صورة الناشر">
         <span class="text-secondary"> نشر في : {{post.post_date|date:'d-m-Y'}}</span>
         <h3> <a class="text-dark" href="{% url 'detail' post.id %}"> {{post.title}} </a> </h3>
-        <p>{{post.content}}</p>
+        <p>
+        {% if post.content|length > 40 %}
+        
+      {{ post.content|safe|truncatewords:25 }} ...
+   {% else %}        
+     {{post.content | safe }} 
+   {% endif %}
+           </p>
     </div>
     {% endfor %}
 

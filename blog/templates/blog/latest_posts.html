@@ -1,7 +1,8 @@
    <ul class="list-group-flush latest-post">
    {% for post in l_posts %}
-     <a href="{% url 'detail' post.id %}" class="text-dark"><li class="list-group-item latest-post-item" > {{post.title}} </li></a>
-{% empty %}
-لايوجد تدوينات
+     <a href="{% url 'detail' post.id %}" class="text-dark">
+       <li class="list-group-item latest-post-item" > {{post.title}} </li></a>
+    {% empty %}
+     <li class="list-group-item latest-comment-item" > لايوجد تدوينات </li>
     {% endfor %}
 </ul>
