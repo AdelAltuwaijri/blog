@@ -86,24 +86,17 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-#DATABASES = {
+DATABASES = {
  #   db_from_env = dj_database_url.config(conn_max_age=500)
   #  DATABASES['default'].update(db_from_env)
-  # 'default': {
-   #     'ENGINE': 'django.db.backends.mysql',
-    #    'NAME': 'blog',
-     #   'USER': 'root',
-      #  'PASSWORD' : 'adel4150485' ,
-       # 'HOST' : 'b102ae7a56628a:3df66aab@us-cdbr-east-05.cleardb.net/heroku_b75f2a73178ca16?reconnect=true/',
-        #'PORT' : '',
-   # }
- 
-DATABASES = { 
-    'default' : 
-        
-        dj_database_url.config(default='sqlite:////path-to-my/database.sqlite')
-   
-    }
+   'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blog',
+        'USER': 'root',
+        'PASSWORD' : 'adel4150485' ,
+        'HOST' : '127.0.0.1',
+        'PORT' : '',
+    }}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -159,3 +152,10 @@ LOGIN_URL = 'login'
 MEDIA_URL = '/media/'
 
 #django_heroku.settings(locals())
+
+env = os.environ.copy()
+db_url = env.get('DATABASE_URL', False)
+
+if db_url != False:
+    DATABASES['default'] = dj_database_url.config()
+    

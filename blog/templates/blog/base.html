@@ -20,7 +20,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
 
-            <img src="{% static 'blog/images/notepad.png' %}" alt="شعار مدونة" width="35 px">
+            <img src="{% static 'blog/images/mylogo/logo_transparent.png' %}" alt="شعار مدونة" width="35 px">
             مدونة
         </a>
         
@@ -34,7 +34,7 @@
               <a class="nav-link" href="{% url 'home' %}">الرئيسية <span class="sr-only">(current)</span></a>
             </li>
          
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 دوراتي
               </a>
@@ -44,9 +44,9 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">دورة تعلم الآلة</a>
               </div>
-            </li>
+            </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">عني</a>
+                <a class="nav-link" href="{% url 'about' %}">السيرة الذاتية</a>
               </li>
           </ul>
 
@@ -112,18 +112,17 @@
                     <h3 class="card-title text-center 
                     border-bottom p-2 m-3"> عنّي </h3>
                     <div class="card-body">
-                      <div class="text-center">
-                        
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-<div class="LI-profile-badge" data-version="v1" data-size="small" data-locale="en_US" data-type="vertical"
-  data-theme="light" data-vanity="adelaltuwaijri"><a class="LI-simple-link"
-    href='https://sa.linkedin.com/in/adelaltuwaijri?trk=profile-badge'>سيرتي الذاتية</a></div>
-</div>
+                      <div class="text-right">
+                        مبرمج ومحلل نظم مهتم بالتقنية وإدارة المشاريع متخصص في علم البيانات وتعليم الآلة 
+                        <a href="{% url 'about' %}">     المزيد ...     </a>
+
+
+
 </div>
                       </div>
                   
 
-                  
+                  </div>
 
                   <div class="card m-3">
                     <h3 class="card-title text-center 
@@ -163,6 +162,7 @@
             </div>
           </div>      
         </footer>
+    
     <script src="{% static 'blog/js/jquery-3.5.1.slim.min.js' %}"></script>
     <script src="{% static 'blog/js/popper.min.js' %}"></script>
     <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
