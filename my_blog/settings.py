@@ -160,3 +160,11 @@ db_url = env.get('DATABASE_URL', False)
 if db_url != False:
     DATABASES['default'] = dj_database_url.config()
     
+
+CKEDITOR_CONFIGS = {
+'default': {
+    'toolbar': None, #You can change this based on your requirements.
+    'width': 'auto',
+
+          },
+    }

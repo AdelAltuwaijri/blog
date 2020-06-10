@@ -37,3 +37,10 @@ class Comment(models.Model):
 
     class Meta():
         ordering=('-comment_date' ), 
+
+class Myresume(models.Model):
+    lastupdate = models.DateTimeField(auto_now=True)
+    resume = RichTextField()
+
+    def __str__(self):
+        return "Last update : {}".format(self.lastupdate.strftime('%Y/%m/%d'))

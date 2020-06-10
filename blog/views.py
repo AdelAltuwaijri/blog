@@ -1,6 +1,6 @@
 from django.shortcuts import render , get_object_or_404
 from . import views
-from blog.models import Post,Comment
+from blog.models import Post,Comment,Myresume
 from blog.forms import NewComment , PostCreateForm
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from django.views.generic import CreateView,UpdateView ,DeleteView
@@ -28,6 +28,10 @@ def home(request):
 
 def about(request):
     return render(request,'blog/about.html',{"title":"من أنا"})
+
+def resume(request):
+    resume= Myresume.objects.all().first()
+    return render(request,'blog/resume.html',{"title":"من أنا","resume":resume})    
 
 def details(request,post_id):
     post=get_object_or_404(Post,pk=post_id)

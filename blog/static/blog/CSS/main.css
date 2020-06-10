@@ -6,10 +6,14 @@
 }
 
 html ,body {
-  direction: rtl;
+  direction: rtl; 
   text-align: right;
 }
 
+.resume {
+    direction: ltr;
+    text-align: left;
+}
 
 body {
     font-family: 'Tajawal', sans-serif;
