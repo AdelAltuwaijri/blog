@@ -56,7 +56,7 @@ Pillow==7.1.2
 prometheus-client==0.7.1
 prompt-toolkit==3.0.4
 psycopg2==2.8.5
-Pygments==2.6.1
+Pygments==2.7.4
 pyparsing==2.4.6
 pyrsistent==0.15.7
 python-dateutil==2.8.1
@@ -142,7 +142,7 @@ Pillow==7.1.2
 prometheus-client==0.7.1
 prompt-toolkit==3.0.4
 psycopg2==2.8.5
-Pygments==2.6.1
+Pygments==2.7.4
 pyparsing==2.4.6
 pyrsistent==0.15.7
 python-dateutil==2.8.1
@@ -228,7 +228,7 @@ Pillow==7.1.2
 prometheus-client==0.7.1
 prompt-toolkit==3.0.4
 psycopg2==2.8.5
-Pygments==2.6.1
+Pygments==2.7.4
 pyparsing==2.4.6
 pyrsistent==0.15.7
 python-dateutil==2.8.1
@@ -315,7 +315,7 @@ Pillow==7.1.2
 prometheus-client==0.7.1
 prompt-toolkit==3.0.4
 psycopg2==2.8.5
-Pygments==2.6.1
+Pygments==2.7.4
 pyparsing==2.4.6
 pyrsistent==0.15.7
 python-dateutil==2.8.1
@@ -403,7 +403,7 @@ Pillow==7.1.2
 prometheus-client==0.7.1
 prompt-toolkit==3.0.4
 psycopg2==2.8.5
-Pygments==2.6.1
+Pygments==2.7.4
 pyparsing==2.4.6
 pyrsistent==0.15.7
 python-dateutil==2.8.1
@@ -493,7 +493,7 @@ Pillow==7.1.2
 prometheus-client==0.7.1
 prompt-toolkit==3.0.4
 psycopg2==2.8.5
-Pygments==2.6.1
+Pygments==2.7.4
 pyparsing==2.4.6
 pyrsistent==0.15.7
 python-dateutil==2.8.1
